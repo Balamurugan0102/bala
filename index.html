@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body> 
+    <div class="container-fluid bg-secondary py-md-4">
+        <form name="studentForm">
+            <table class="mx-auto bg-light">
+                <tr>
+                    <th class="text-center" colspan="2"><h2><b style="font-family: Georgia, 'Times New Roman', Times, serif;">Student Details</b></h2></th>
+                </tr>
+                <tr>
+                    <td><label class="mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Student ID</label></td>
+                    <td><input type="text" name="studentId"></td>
+                </tr>
+                <tr>
+                    <td><label class="py-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Student Name</label></td>
+                    <td><input type="text" name="studentName"></td>
+                </tr>
+                <tr>
+                    <td><label class="mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Address</label></td>
+                    <td><textarea name="address" rows="4" cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label class="py-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Tamil</label></td>
+                    <td><input type="text" name="tamil"></td>
+                </tr>
+                <tr>
+                    <td><label class="mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">English</label></td>
+                    <td><input type="text" name="english"></td>
+                </tr>
+                <tr>
+                    <td><label class="py-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Maths</label></td>
+                    <td><input type="text" name="maths"></td>
+                </tr>
+                <tr>
+                    <td><label class="mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Science</label></td>
+                    <td><input type="text" name="science"></td>
+                </tr>
+                <tr>
+                    <td><label class="py-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Social Science</label></td>
+                    <td><input type="text" name="social"></td>
+                </tr>
+                <tr>
+                    <td class="text-center" colspan="2">
+                        <input class="btn btn-success" type="button" value="Submit" onclick="calculateTotalAndPercentage()">
+                        <button class="btn btn-dark ms-md-4" type="reset">Clear</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="py-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Total</label></td>
+                    <td><input type="text" name="total" disabled></td>
+                </tr>
+                <tr>
+                    <td><label class="pb-md-3 mx-md-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Percentage</label></td>
+                    <td><input type="text" name="percentage" disabled></td>
+                </tr>
+            </table> 
+        </form>
+    </div>
+
+    
+    <script>
+        function calculateTotalAndPercentage() {
+           
+            let tamil = parseInt(document.forms["studentForm"]["tamil"].value);
+            let english = parseInt(document.forms["studentForm"]["english"].value);
+            let maths = parseInt(document.forms["studentForm"]["maths"].value);
+            let science = parseInt(document.forms["studentForm"]["science"].value);
+            let social = parseInt(document.forms["studentForm"]["social"].value);
+
+            
+            let total = tamil + english + maths + science + social;
+            let percentage = (total / 5).toFixed(2); 
+
+            
+            document.forms["studentForm"]["total"].value = total;
+            document.forms["studentForm"]["percentage"].value = percentage;
+        }
+    </script>
+</body>
+</html>
