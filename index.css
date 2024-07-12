@@ -1,0 +1,16 @@
+
+body {
+    background-color: #3498db;
+    overflow: hidden;
+}
+
+
+@keyframes changeBackgroundColor {
+    0% { background-color: #7cb5da; } 
+    50% { background-color: #e38b81; } 
+    100% { background-color: #1b6b3c; }
+}
+
+
+body {
+    animation: changeBackgroundColor 10s ease infinite;}
